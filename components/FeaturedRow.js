@@ -4,15 +4,14 @@ import { themeColors } from "../theme";
 import { featured } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 
-function FeaturedRow({title,description,restaurants}) {
+function FeaturedRow({title,restaurants}) {
 
-    //const {title,description,restaurants} = props;
+    // const {title,description,restaurants} = props;
   return (
     <View>
       <View className=" flex-row  items-center justify-between px-4">
         <View>
             <Text className="font-bold text-lg">{title}</Text>
-            <Text>{description}</Text>
         </View>
         <TouchableOpacity
           
@@ -27,7 +26,7 @@ function FeaturedRow({title,description,restaurants}) {
         contentContainerStyle={{
             paddingHorizontal:15
         }}
-        className="overflow-visible py-5">
+        className="overflow-visible py-3">
             {
                 restaurants.map((restaurant,index)=>{
                     return(

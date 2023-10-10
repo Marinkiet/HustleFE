@@ -6,8 +6,9 @@ import React from 'react';
 import CartScreen from './screens/CartScreen';
 import OrderPreparing from './screens/OrderPreparing';
 import Delivey from './screens/Delivey';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
-
+const Tabs = createBottomTabNavigator;
 
 const Navigation = () => {
   return (
@@ -22,6 +23,7 @@ const Navigation = () => {
         <Stack.Screen name='Delivery' options={{presentation:'fullScreenModal'}} component={Delivey}/>
 
       </Stack.Navigator>
+      {/* <Tabs/> */}
     </NavigationContainer>
   )
 }

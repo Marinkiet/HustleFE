@@ -1,45 +1,24 @@
-export const categories=[
+export const categories = [
     {
-        id:1,
-        name:"Pizza",
-        image:require("../assets/images/kfc.png")
-
+      id: 1,
+      name: "All",
     },
     {
-        id:2,
-        name:"Burger",
-        image:require("../assets/images/kfc.png")
-
+      id: 2,
+      name: "Products",
     },
     {
-        id:3,
-        name:"Chinease",
-        image:require("../assets/images/kfc.png")
-
+      id: 3,
+      name: "Services",
     },
     {
-        id:4,
-        name:"Kota",
-        image:require("../assets/images/kfc.png")
-
+      id: 4,
+      name: "Events",
     },
-    {
-        id:5,
-        name:"Italian",
-        image:require("../assets/images/kfc.png")
-
-    },
-    {
-        id:6,
-        name:"Fried",
-        image:require("../assets/images/kfc.png")
-
-    },
-]
+  ];
 export const featured={
         id:1,
-        title:"Hot out of the box",
-        description:"On a hot flame",
+        title:"Recommended for you",
         restaurants:[
             {
                 id:1,
@@ -56,13 +35,15 @@ export const featured={
                     {
                         id:1,
                         name:"King Kota",
-                        price:73,
+                        min_price:73,
+                        max_price:100,
                         image:require("../assets/images/pizza.png")
                     },
                     {
                         id:2,
                         name:"Prince Kota",
-                        price:45,
+                        min_price:73,
+                        max_price:100,
                         image:require("../assets/images/sushi.png")
                     }
                 ]
@@ -102,7 +83,8 @@ export const featured={
                     {
                         id:1,
                         name:"burgers!",
-                        price:23,
+                        min_price:73,
+                        max_price:100,
                         image:require("../assets/images/kfc.png")
                     },
                     {
@@ -114,7 +96,8 @@ export const featured={
                     {
                         id:3,
                         name:"Ice scream!",
-                        price:23,
+                        min_price:73,
+                        max_price:100,
                         image:require("../assets/images/kfc.png")
                     }
                 ]

@@ -82,7 +82,34 @@ const RestaurantScreen = () => {
           </View>
         </View>
         <View className="pb-36 bg-white">
-            <Text className="px-4 py-4 text-2xl font-bold">Menu</Text>
+            <Text className="px-4 py-4 text-2xl font-bold">Products</Text>
+            {/* All dishes */}
+            {
+                item.dishes.map((dish,index)=>{
+                    return(
+                        <>
+                            <DishRow item={{...dish}} key={index}/>
+                        </>
+                    )
+                })
+            }
+        </View>
+        <View className="pb-36 bg-white">
+            <Text className="px-4 py-4 text-2xl font-bold">Services</Text>
+            {/* All dishes */}
+            {
+                item.dishes.map((dish,index)=>{
+                    return(
+                        <>
+                            <DishRow item={{...dish}} key={index}/>
+                        </>
+                    )
+                })
+            }
+        </View>
+
+        <View className="pb-36 bg-white">
+            <Text className="px-4 py-4 text-2xl font-bold">Events</Text>
             {/* All dishes */}
             {
                 item.dishes.map((dish,index)=>{

@@ -17,21 +17,9 @@ const DishRow = ({ item }) => {
           <Text className="text-gray-700">{item.description}</Text>
         </View>
         <View className=" flex-row justify-between pl-3 items-center">
-            <Text className="text-gray-700 text-lg font-bold">R{item.price}</Text>
+            <Text className="text-gray-700 text-lg font-bold">From R{item.min_price} to R{item.max_price}</Text>
             <View className="flex-row items-center">
-                <TouchableOpacity
-                className="p-1 rounded-full"
-                style={{backgroundColor:themeColors.bgColor(1)}}>
-                <Ionicons name="add-sharp" size={25} color="white" />
-
-                </TouchableOpacity>
-                <Text className="px-3">2</Text>
-                <TouchableOpacity
-                className="p-1 rounded-full"
-                style={{backgroundColor:themeColors.bgColor(1)}}>
-                <Ionicons name="remove" size={25} color="white" />
-
-                </TouchableOpacity>
+              
             </View>
         </View>
       </View>

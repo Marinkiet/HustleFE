@@ -7,6 +7,7 @@ import { themeColors } from "../theme";
 import Categories from "../components/Categories";
 import FeaturedRow from "../components/FeaturedRow";
 import { featured } from "../constants";
+import { TouchableOpacity } from "react-native";
 
 const HomeScreen = () => {
     //  const [featured,setFeatured] = useState([])
@@ -33,9 +34,11 @@ const HomeScreen = () => {
           </View>
         </View>
 
-        {/* Slider */}
+        {/* Slider Icon*/}
         <View style={{backgroundColor:themeColors.bgColor(1)}} className="p-3 rounded-full">
+        <TouchableOpacity>
         <Feather name="sliders" size={24} color="black" />
+        </TouchableOpacity>
         </View>
       </View>
 

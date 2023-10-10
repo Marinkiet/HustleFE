@@ -4,6 +4,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Feather } from "@expo/vector-icons";
 import { themeColors } from "../theme";
 import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native";
 
 const RestaurantCard = ({ item }) => {
   const navigation = useNavigation();
@@ -20,9 +21,17 @@ const RestaurantCard = ({ item }) => {
         // }}
         className="mr-6 bg-white rounded-3xl shadow-lg"
       >
-        <Image className="h-34 w-64 rounded-t-3xl" source={item.image} />
-        <View className="px-3 pb-4 space-y-2">
-          <Text className="text-lg font-bold pt-2">{item.name}</Text>
+        <Image className="h-49 w-80 rounded-t-3xl" source={item.image} />
+        <View className="px-3 pb-4 space-y-2 mt-1">
+          <View className="flex-row justify-between">
+            <Text className="text-lg font-bold pt-2">
+            {item.name}
+</Text>  
+            <TouchableOpacity>
+              <Image className="h-14 w-14 rounded-full" source={item.image} />
+              <Text>John Doe</Text>
+            </TouchableOpacity>
+          </View>
 
           <View className="flex-row items-center space-x-1">
             <Ionicons name="ios-star" size={15} color="gold" />
@@ -47,6 +56,34 @@ const RestaurantCard = ({ item }) => {
               Nearby&#183; {item.address}
             </Text>
           </View>
+         <View className="flex-row justify-between align-middle items-center">
+         <View >
+            <View className="flex-row items-center ">
+              <TouchableOpacity>
+              <Ionicons name="walk" size={30} color="black" />
+              </TouchableOpacity>
+              <Text className="text-gray-500 text-xs ml-2">5 min - Start walking</Text>
+            </View>
+            <View className="flex-row items-center py-1">
+              <TouchableOpacity>
+  <Ionicons name="car-sport-outline" size={30} color="black" />
+              </TouchableOpacity>
+              <Text className="text-gray-500 text-xs ml-2">5 min - Start walking</Text>
+
+            
+            </View>
+          </View>
+          <View className="pb-2 m-2">
+            <TouchableOpacity>
+            <Ionicons name="call" size={34} color="black" />
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Ionicons name="chatbubble-ellipses" size={34} color="black" />
+
+            </TouchableOpacity>
+          </View>
+
+         </View>
         </View>
       </View>
     </TouchableWithoutFeedback>
