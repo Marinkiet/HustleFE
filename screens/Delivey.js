@@ -1,14 +1,16 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
-import { featured } from "../constants";
+import { useNavigation,useRoute } from "@react-navigation/native";
+import { featured, recommended } from "../constants";
 import MapView, { Marker } from "react-native-maps";
 import { themeColors } from "../theme";
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 const Delivey = () => {
   const navigation = useNavigation();
-  const restaurant = featured.restaurants[0];
+  const restaurant = recommended.restaurants[2];
+  const { params } = useRoute();
+  let item = params;
   return (
     <View className="flex-1">
       {/* Map */}
@@ -25,11 +27,12 @@ const Delivey = () => {
       >
         <Marker
           coordinate={{
-            latitude: restaurant.lat,
-            longitude: restaurant.lng,
+            latitude: -25.976990,
+            longitude: 28.118081,
           }}
           title={restaurant.name}
           description={restaurant.description}
+
           pinColor={themeColors.bgColor(1)}
         />
       </MapView>
@@ -40,12 +43,14 @@ const Delivey = () => {
             <Text className="text-lg font-semibold text-gray-700">
               Estimated Arrival
             </Text>
-            <Text className="text-3xl font-extrabold text-gray-700">
-              20 - 30 Minutes
-            </Text>
-            <Text className="mt-2 font-semibold text-gray-700">
-              Your order is on its way
-            </Text>
+            <View className="flex-row items-center">
+            <Ionicons name="walk" size={30} color="black" />
+
+<Text className="text-3xl font-extrabold text-gray-700">
+  {restaurant.distance_walk} minutes
+</Text>
+            </View>
+          
           </View>
 
           <Image
@@ -62,13 +67,13 @@ const Delivey = () => {
         <View className="p-1 rounded-full">
           <Image
             className="w-16 h-16 rounded-full"
-            source={require("../assets/images/deliveryGuy.png")}
+            source={restaurant.profile_image}
           />
         </View>
 
         <View className="flex-1 ml-3">
-          <Text className="text-lg font-bold text-white">Given Makofane</Text>
-          <Text className="font-semibold text-white">Your Blesser</Text>
+          <Text className="text-lg font-bold text-white">{restaurant.hustler}</Text>
+          <Text className="font-semibold text-white"></Text>
         </View>
         <View className="flex-row items-center space-x-3 mr-3">
           <TouchableOpacity className="bg-white rounded-full p-2">

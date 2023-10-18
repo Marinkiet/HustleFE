@@ -39,7 +39,7 @@ const Categories = () => {
           return (
             <View
               key={index}
-              className="flex justify-center items-center mr-6 "
+              className="flex justify-center items-center mr-6 pb-3"
             >
               <TouchableOpacity
                 // when user clicks on category run for state setActiveCategory

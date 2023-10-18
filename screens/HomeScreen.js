@@ -6,10 +6,12 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { themeColors } from "../theme";
 import Categories from "../components/Categories";
 import FeaturedRow from "../components/FeaturedRow";
-import { featured } from "../constants";
+import { yourArea,  recommended, aroundyou } from "../constants";
 import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
+  const navigator = useNavigation();
     //  const [featured,setFeatured] = useState([])
   return (
     <SafeAreaView className="bg-white">
@@ -20,6 +22,7 @@ const HomeScreen = () => {
       {/* <View className="items-center ">
             <Text className=""><Feather name="map-pin" size={15} color="gray" />Midrand, Sunning</Text>
         </View> */}
+             <Text className="font-bold font-mono m-5 text-3xl">Hustle|Hub</Text>
 
       <View className="flex-row items-center space-x-2 px-4 pb-2">
 
@@ -36,7 +39,8 @@ const HomeScreen = () => {
 
         {/* Slider Icon*/}
         <View style={{backgroundColor:themeColors.bgColor(1)}} className="p-3 rounded-full">
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={()=>navigator.navigate("ItemScreen")}>
         <Feather name="sliders" size={24} color="black" />
         </TouchableOpacity>
         </View>
@@ -56,7 +60,35 @@ const HomeScreen = () => {
        {/* Featured rows */}
        <View className="mt-5">
         {
-            [featured,featured,featured].map((item,index)=>{
+            [recommended].map((item,index)=>{
+                return(
+                    <FeaturedRow
+                        key={index}
+                        title={item.title}
+                        description={item.description}
+                        restaurants={item.restaurants}
+                    />
+                )
+            })
+        }
+        </View>
+        <View className="mt-5">
+        {
+            [yourArea].map((item,index)=>{
+                return(
+                    <FeaturedRow
+                        key={index}
+                        title={item.title}
+                        description={item.description}
+                        restaurants={item.restaurants}
+                    />
+                )
+            })
+        }
+        </View>
+        <View className="mt-5">
+        {
+            [aroundyou].map((item,index)=>{
                 return(
                     <FeaturedRow
                         key={index}

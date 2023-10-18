@@ -5,20 +5,21 @@ import { store } from './store';
 import { Provider } from 'react';
 import Tabs from './components/BottomTabs';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// const Tabs = createBottomTabNavigator;
+
 export default function App() {
   const colorScheme = useColorScheme();
 
   return (
   //   <>
   //    <Provider store={store}>
-  // <Navigation></Navigation>
+  <Navigation>
+    
+  </Navigation>
 
   //   </Provider>
   //   </>
-<NavigationContainer>
-  {/* <Tabs/> */}
-</NavigationContainer>
-  
+  )
 
-  );
 }

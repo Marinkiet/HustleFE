@@ -11,8 +11,7 @@ const RestaurantCard = ({ item }) => {
   return (
     <TouchableWithoutFeedback
       /* On press go to Restaurant Page and pass the restaurant data*/
-      onPress={() => navigation.navigate("Restaurant", { ...item })}
-    >
+      >
       <View
         // Add universal styles
         // style={{
@@ -21,15 +20,24 @@ const RestaurantCard = ({ item }) => {
         // }}
         className="mr-6 bg-white rounded-3xl shadow-lg"
       >
-        <Image className="h-49 w-80 rounded-t-3xl" source={item.image} />
+        <Image className="h-49 w-80 rounded-t-3xl " 
+        style={{width:360,height:300}} source={item.image} />
         <View className="px-3 pb-4 space-y-2 mt-1">
           <View className="flex-row justify-between">
-            <Text className="text-lg font-bold pt-2">
-            {item.name}
-</Text>  
-            <TouchableOpacity>
-              <Image className="h-14 w-14 rounded-full" source={item.image} />
-              <Text>John Doe</Text>
+            <View>
+            <Text className="text-lg font-bold pt-2">{item.name}</Text>
+            <Text className="text-lg font-bold pt-2">{item.area}</Text>
+            <Text className="text-lg font-bold pt-2">R{item.price}</Text>
+
+            </View>
+          
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Restaurant", { ...item })}
+              className="flex items-center"
+            >
+              <Image className="h-14 w-14 rounded-full" source={item.profile_image} />
+              <Text>{item.hustler}</Text>
             </TouchableOpacity>
           </View>
 
@@ -55,35 +63,43 @@ const RestaurantCard = ({ item }) => {
             <Text className="text-gray-500 text-xs">
               Nearby&#183; {item.address}
             </Text>
+            <Text> - {item.area}</Text>
           </View>
-         <View className="flex-row justify-between align-middle items-center">
-         <View >
-            <View className="flex-row items-center ">
-              <TouchableOpacity>
-              <Ionicons name="walk" size={30} color="black" />
-              </TouchableOpacity>
-              <Text className="text-gray-500 text-xs ml-2">5 min - Start walking</Text>
+          <Text className="text-gray-500 text-xs ml-2">
+                  Open {item.time}
+                </Text>
+          <View className="flex-row justify-between align-middle items-center">
+            <View>
+              <View className="flex-row items-center ">
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("OrderPreparing")}
+                  >
+                  <Ionicons name="walk" size={30} color="black" />
+                </TouchableOpacity>
+                <Text className="text-gray-500 text-xs ml-2">
+                  {item.distance_walk} min - Start walking
+                </Text>
+              </View>
+              <View className="flex-row items-center py-1">
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("OrderPreparing")}
+                >
+                  <Ionicons name="car-sport-outline" size={30} color="black" />
+                </TouchableOpacity>
+                <Text className="text-gray-500 text-xs ml-2">
+                {item.distance_car} min - Start driving
+                </Text>
+              </View>
             </View>
-            <View className="flex-row items-center py-1">
+            <View className="pb-2 m-2">
               <TouchableOpacity>
-  <Ionicons name="car-sport-outline" size={30} color="black" />
+                <Ionicons name="call" size={34} color="black" />
               </TouchableOpacity>
-              <Text className="text-gray-500 text-xs ml-2">5 min - Start walking</Text>
-
-            
+              <TouchableOpacity>
+                <Ionicons name="chatbubble-ellipses" size={34} color="black" />
+              </TouchableOpacity>
             </View>
           </View>
-          <View className="pb-2 m-2">
-            <TouchableOpacity>
-            <Ionicons name="call" size={34} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-            <Ionicons name="chatbubble-ellipses" size={34} color="black" />
-
-            </TouchableOpacity>
-          </View>
-
-         </View>
         </View>
       </View>
     </TouchableWithoutFeedback>

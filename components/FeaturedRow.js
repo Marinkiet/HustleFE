@@ -12,6 +12,7 @@ function FeaturedRow({title,restaurants}) {
       <View className=" flex-row  items-center justify-between px-4">
         <View>
             <Text className="font-bold text-lg">{title}</Text>
+
         </View>
         <TouchableOpacity
           
