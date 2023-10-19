@@ -9,24 +9,11 @@ import CartIcon from "../components/CartIcon";
 import { StatusBar } from "expo-status-bar";
 import Categories from "../components/Categories";
 // import { useDispatch } from 'react-redux'
-// import { setRestaurant } from "../slices/restaurantSlice";
 
 const RestaurantScreen = () => {
   const { params } = useRoute();
   let item = params;
   const navigation = useNavigation();
-
-  // //discpach hook
-  // const dispatch = useDispatch();
-
-  // //when component mounts set the data on redux
-  // useEffect(()=>{
-  //   if(item && item.id){
-  //     // dispatch{setRestaurant(...item)}
-
-  //   }
-
-  // })
 
   return (
     <View>
@@ -72,45 +59,42 @@ const RestaurantScreen = () => {
                       </Text>
                     </Text>
                   </View>
-                  {/* Restaurant Adress */}
+                  {/* Hustle Address */}
                   <View>
                     <View className=" flex-row space-x-1 items-center">
                       <Feather name="map-pin" size={15} color="gray" />
                       <Text className="text-gray-500 text-xs">
                         Nearby&#183; {item.address}
-                      </Text> 
+                      </Text>
                       <Text>- {item.area}</Text>
-
                     </View>
                   </View>
                 </View>
-                <View>
-                </View>
+                <View></View>
               </View>
             </View>
-            {/* <Text className="text-gray-500 mt-2">{item.description}</Text> */}
           </View>
         </View>
         <Categories />
 
         <View className="pb-36 bg-white">
           <Text className="px-4 py-4 text-2xl font-bold">Products</Text>
-          {/* All dishes */}
-          {item.dishes.map((dish, index) => {
+          {/* All hustle items */}
+          {item.ahustleitem.map((hustleitem, index) => {
             return (
               <>
-                <AHustleRow item={{ ...dish }} key={index} />
+                <AHustleRow item={{ ...hustleitem }} key={index} />
               </>
             );
           })}
         </View>
         <View className="pb-36 bg-white">
           <Text className="px-4 py-4 text-2xl font-bold">Services</Text>
-          {/* All dishes */}
-          {item.dishes.map((dish, index) => {
+          {/* All ahustleitem */}
+          {item.ahustleitem.map((hustleitem, index) => {
             return (
               <>
-                <AHustleRow item={{ ...dish }} key={index} />
+                <AHustleRow item={{ ...hustleitem }} key={index} />
               </>
             );
           })}
@@ -118,11 +102,11 @@ const RestaurantScreen = () => {
 
         <View className="pb-36 bg-white">
           <Text className="px-4 py-4 text-2xl font-bold">Events</Text>
-          {/* All dishes */}
-          {item.dishes.map((dish, index) => {
+          {/* All ahustleitem */}
+          {item.ahustleitem.map((hustleitem, index) => {
             return (
               <>
-                <AHustleRow item={{ ...dish }} key={index} />
+                <AHustleRow item={{ ...hustleitem }} key={index} />
               </>
             );
           })}

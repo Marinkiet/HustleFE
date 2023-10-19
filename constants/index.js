@@ -24,8 +24,8 @@ export const recommended={
                 id:1,
                 name:"CornerFruits",
                 image:require("../assets/images/bananas.jpg"),
-                profile_image:require("../assets/images/deliveryGuy.png"),
-                description:"All kinds of kota",
+                profile_image:require("../assets/images/deliveryguy.jpeg"),
+                description:"All kinds of fuits",
                 lng:28.118081,
                 lat:-25.976990,
                 address:"454 second street",
@@ -183,42 +183,54 @@ export const recommended={
             },
             {
                 id:3,
-                name:"Burger King",
-                image:require("../assets/images/sushi.png"),
-                description:"All kinds of burger",
+                name:"Nene's Kota",
+                image:require("../assets/images/kotamain.jpeg"),
+                description:"All kinds Kota",
                 lng:28.118081,
                 lat:-25.976990,
-                address:"668 second street",
-                area:"Seattle",
-                stars:4,
-                distance_car:5,
-                distance_walk:1,
-                price:35,
-                reviews:"2.5k",
-                category:"Fast healthish food",
+                address:"34 Alsatian Rd, Glen Austin",
+                area:"Opposit San Ridge Hights Apartments",
+                stars:5,
+                distance_car:3,
+                distance_walk:8,
+                price:45,
+                reviews:"10k",
+                category:"Fast food",
                 ahusteitem:[
                     {
                         id:1,
-                        name:"burgers!",
-                        min_price:73,
-                        max_price:100,
+                        name:"Footlong Kota",
+                        min_price:35,
+                        max_price:55,
                         isAvailable:true,
-                        image:require("../assets/images/kfc.png")
+                        image:require("../assets/images/kota1.jpeg")
                     },
                     {
                         id:2,
-                        name:"Cake!",
-                        price:23,
-                        image:require("../assets/images/kfc.png")
+                        name:"Almighty Kota",
+                        min_price:65,
+                        max_price:95,
+                        isAvailable:true,
+                        image:require("../assets/images/kota2.jpeg")
                     },
                     {
                         id:3,
-                        name:"Ice scream!",
-                        min_price:73,
+                        name:"Footlong Russian with Egg and Cheese",
+                        min_price:60,
+                        max_price:80,
+                        isAvailable:true,
+                        image:require("../assets/images/kota3.jpeg")
+                    },
+                    {
+                        id:4,
+                        name:"Kasi Style Burger with Beacon",
+                        min_price:96,
                         max_price:100,
                         isAvailable:true,
-                        image:require("../assets/images/kfc.png")
-                    }
+                        image:require("../assets/images/kota4.jpeg")
+                    },
+                    
+
                 ]
             },
         ]
@@ -251,7 +263,7 @@ export const recommended={
                         isAvailable:true,
                         min_price:73,
                         max_price:100,
-                        image:require("../assets/images/pizza.png")
+                        image:require("../assets/images/books.jpg")
                     },
                     {
                         id:2,
@@ -282,23 +294,23 @@ export const recommended={
             },
             {
                 id:3,
-                name:"Burger King",
-                image:require("../assets/images/sushi.png"),
-                description:"All kinds of burger",
+                name:"Fishy days 4 chips",
+                image:require("../assets/images/fishandchips.jpg"),
+                description:"Chips and fish fried",
                 lng:28.118081,
                 lat:-25.976990,
                 address:"668 second street",
-                area:"Seattle",
-                distance_car:5,
-                distance_walk:1,
+                area:"Halfway House",
+                distance_car:10,
+                distance_walk:37,
                 stars:4,
                 price:35,
                 reviews:"2.5k",
-                category:"Fast healthish food",
+                category:"Fast food",
                 ahusteitem:[
                     {
                         id:1,
-                        name:"burgers!",
+                        name:"chips",
                         min_price:73,
                         max_price:100,
                         isAvailable:true,
